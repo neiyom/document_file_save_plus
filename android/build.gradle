@@ -38,16 +38,16 @@ namespace 'com.advoques.document_file_save_plus'
         disable 'InvalidPackage'
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17  // or VERSION_21 if you want latest
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "17"  // must match compileOptions above
-    }
-}
+
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
